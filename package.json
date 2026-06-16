@@ -1,0 +1,8 @@
+{
+  "name": "cineby-tv-wrapper",
+  "version": "1.0.0",
+  "packageType": "app",
+  "appName": "Cineby TV Launcher",
+  "appPath": "app/index.html",
+  "keys": ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Enter", "Return"]
+}
