@@ -8,24 +8,50 @@
         html, body { 
             width: 100%; 
             height: 100%; 
-            background-color: #000; 
+            background-color: #141414; 
             margin: 0; 
             padding: 0; 
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             color: #fff;
             font-family: sans-serif;
         }
+        .launch-btn {
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+        }
+        /* Visual confirmation when your Samsung remote focuses the button */
+        .launch-btn:focus {
+            outline: 4px solid #ffffff;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
 
-    <div>Loading Cineby Streaming...</div>
+    <h1 style="margin-bottom: 30px;">Cineby Streaming Portal</h1>
+    
+    <button class="launch-btn" id="start-btn" autofocus>Click to Launch Cineby</button>
 
     <script>
-        // Force the TV layer to directly open the catalog layout natively
-        window.location.href = "https://www.cineby.at";
+        const btn = document.getElementById('start-btn');
+        
+        // Ensure it gets highlighted immediately so the TV remote can click it
+        btn.focus();
+
+        // Redirect when the remote's "Enter/Select" button is clicked
+        btn.addEventListener('click', function() {
+            window.location.href = "https://www.cineby.at";
+        });
     </script>
 </body>
 </html>
